@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "preLaunchTask": "generate-lib",
-      "program": "${workspaceFolder}\\test\\classifyDevTest.mjs",
+      "program": "${workspaceFolder}\\tests\\classifyDevTest.mjs",
       "runtimeArgs": [
         "--experimental-modules"
       ]
