@@ -1,11 +1,15 @@
 'use strict';
 
-const path = require('path');
-const fs = require('fs');
+import path from 'path';
+import fs from 'fs';
 
-const mobileconfig = require('../index');
+import * as mobileconfig from '../src/index.mjs';
 
-const mobileconfig2 = require('../index.old');
+const _dirname = path.dirname(new URL(import.meta.url).pathname.replace(/^\/([a-zA-Z]:)/g, '$1')) || __dirname;
+
+console.log('hi');
+console.log(_dirname);
+console.log(mobileconfig);
 
 const profile = new mobileconfig.MobileConfigProfile({
   displayName: 'Test Profile',
@@ -32,8 +36,7 @@ profile.addPayload(new mobileconfig.WebClipPayload({
   displayName: 'google homepage link',
   description: 'A homepage link added to quickly link to google',
   organization: 'carboncollins',
-  identifier: 'com.carboncollins.testprofile.testwebclip',
-  icon: fs.readFileSync(path.join(__dirname, '../lib/assets/googleicon.png')),
+  identifier: 'com.carboncollins.testprofile.testwebclip'
 }));
 
 profile.addPayload(new mobileconfig.WiFiPayload({
@@ -53,7 +56,7 @@ profile.addPayload(new mobileconfig.CertificatePayload('pem', {
   organization: 'carboncollins',
   identifier: 'com.carboncollins.testprofile.testcert',
   certificateFileName: 'cert.pem',
-  content: fs.readFileSync(path.join(__dirname, './fixtures/cert.pem'))
+  content: fs.readFileSync(path.join(_dirname, './fixtures/cert.pem'))
 }));
 
 console.log(profile);
@@ -64,8 +67,3 @@ console.log(plist);
 fs.writeFileSync('./test.mobileconfig', plist, 'utf-8');
 
 console.log('hellow world');
-
-const existing = mobileconfig2.getEmailConfig({});
-
-console.log(existing);
-fs.writeFileSync('./test2.mobileconfig', existing, 'utf-8');

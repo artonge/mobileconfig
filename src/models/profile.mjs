@@ -1,8 +1,8 @@
 'use strict';
 
-const uuid = require('uuid');
+import uuid from 'uuid';
 
-const { toSafeString, toSafeInteger, toSafeDate, toSafeBoolean, toSafeFloat, hasRequiredValues, deleteEmptyKeys } = require('../safe');
+import { toSafeString, toSafeInteger, toSafeDate, toSafeBoolean, toSafeFloat, hasRequiredValues, deleteEmptyKeys } from '../safe.mjs';
 
 const requiredValues = ['PayloadType', 'PayloadVersion', 'PayloadIdentifier', 'PayloadUUID'];
 
@@ -12,7 +12,7 @@ const requiredValues = ['PayloadType', 'PayloadVersion', 'PayloadIdentifier', 'P
  * @author Steven Collins <CarbonCollins>
  * @date 27th April 2018
  */
-class MobileConfigProfile {
+export default class MobileConfigProfile {
   /**
    * @constructor
    * @description creates an instance of MobileConfigProfile
@@ -82,6 +82,4 @@ class MobileConfigProfile {
   clearPayloads() {
     this.content = [];
   }
-};
-
-module.exports = MobileConfigProfile;
+}

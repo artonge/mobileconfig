@@ -29,3 +29,4 @@ node_modules
 *.mobileconfig
 .DS_Store
 package-lock.json
+lib

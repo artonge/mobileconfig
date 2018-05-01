@@ -1,35 +1,59 @@
 {
-    "name": "mobileconfig",
-    "version": "2.1.0",
-    "description": "Create and sign iOS mobileconfig configuration files",
-    "main": "index.js",
-    "scripts": {
-        "test": "grunt"
+  "name": "mobileconfig",
+  "version": "3.0.0",
+  "description": "Create and sign iOS mobileconfig configuration files",
+  "main": "./index",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarbonCollins/mobileconfig.git"
+  },
+  "keywords": [
+    "mobileconfig",
+    "ios",
+    "mac",
+    "profile",
+    "RFC5652",
+    "SignedData"
+  ],
+  "author": "Steven Collins",
+  "contributors": [
+    {
+      "name": "Andris Reinman",
+      "url": "https://github.com/andris9"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/andris9/mobileconfig.git"
-    },
-    "keywords": ["RFC5652", "SignedData"],
-    "author": "Andris Reinman",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/andris9/mobileconfig/issues"
-    },
-    "homepage": "https://github.com/andris9/mobileconfig#readme",
-    "dependencies": {
-        "handlebars": "^4.0.10",
-        "jsrsasign": "^8.0.3",
-        "plist": "^2.1.0",
-        "uuid": "^3.1.0"
-    },
-    "devDependencies": {
-        "chai": "~4.1.1",
-        "eslint-config-nodemailer": "^1.2.0",
-        "grunt": "~1.0.1",
-        "grunt-cli": "^1.2.0",
-        "grunt-eslint": "^20.0.0",
-        "grunt-mocha-test": "~0.13.2",
-        "mocha": "^3.5.0"
+    {
+      "name": "Steven Collins",
+      "url": "https://github.com/CarbonCollins"
     }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CarbonCollins/mobileconfig/issues"
+  },
+  "homepage": "https://github.com/CarbonCollins/mobileconfig",
+  "dependencies": {
+    "jsrsasign": "^8.0.3",
+    "plist": "^3.0.1",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-rename-import": "^2.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-nodemailer": "^1.2.0",
+    "eslint-plugin-import": "^2.11.0",
+    "fs-extra": "^5.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-clean": "^0.4.0",
+    "jsdoc-to-markdown": "^4.0.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
 }

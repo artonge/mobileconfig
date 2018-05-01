@@ -1,8 +1,8 @@
 'use strict';
 
-const MobileConfigPayload = require('./payload');
+import MobileConfigPayload from './payload.mjs';
 
-const { toSafeString } = require('../safe');
+import { toSafeString } from '../safe.mjs';
 
 function toSafeWhitelist(value) {
   if (value === undefined || value === null || !Array.isArray(value)) {
@@ -17,7 +17,7 @@ function toSafeWhitelist(value) {
         whitelist.push({ DeviceID: deviceId });
       }
     }
-   
+
     return (whitelist.length === 0)
       ? null
       : whitelist;
@@ -53,7 +53,7 @@ function toSafePasswords(value) {
  * @author Steven Collins <CarbonCollins>
  * @date 27th April 2018
  */
-class AirPlayPayload extends MobileConfigPayload {
+export default class AirPlayPayload extends MobileConfigPayload {
   /**
    * @constructor
    * @description creates an instance of AirPlayPayload
@@ -77,5 +77,3 @@ class AirPlayPayload extends MobileConfigPayload {
     return Object.assign({}, super.plistSafeObject, plistObj);
   }
 }
-
-module.exports = AirPlayPayload;

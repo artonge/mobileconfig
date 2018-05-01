@@ -1,8 +1,8 @@
 'use strict';
 
-const MobileConfigPayload = require('./payload');
+import MobileConfigPayload from './payload.mjs';
 
-const { toSafeString, deleteEmptyKeys } = require('../safe');
+import { toSafeString, deleteEmptyKeys } from '../safe.mjs';
 
 /**
  * @class
@@ -11,7 +11,7 @@ const { toSafeString, deleteEmptyKeys } = require('../safe');
  * @author Steven Collins <CarbonCollins>
  * @date 27th April 2018
  */
-class CertificatePreferencePayload extends MobileConfigPayload {
+export default class CertificatePreferencePayload extends MobileConfigPayload {
   /**
    * @constructor
    * @description creates an instance of CertificatePreferencePayload
@@ -37,5 +37,3 @@ class CertificatePreferencePayload extends MobileConfigPayload {
     return plistObj;
   }
 }
-
-module.exports = CertificatePreferencePayload;

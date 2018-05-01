@@ -1,8 +1,8 @@
 'use strict';
 
-const MobileConfigPayload = require('./payload');
+import MobileConfigPayload from './payload.mjs';
 
-const { toSafeString, toSafeBoolean, toSafeData, toSafeInteger, toSafeArray, deleteEmptyKeys, hasRequiredValues } = require('../safe');
+import { toSafeString, toSafeBoolean, toSafeData, toSafeInteger, toSafeArray, deleteEmptyKeys, hasRequiredValues } from '../safe.mjs';
 
 const requiredValues = [];
 
@@ -62,7 +62,7 @@ function toSafeEAPClientConfiguration(value = {}) {
  * @author Steven Collins <CarbonCollins>
  * @date 29th April 2018
  */
-class WiFiPayload extends MobileConfigPayload {
+export default class WiFiPayload extends MobileConfigPayload {
   /**
    * @constructor
    * @description creates an instance of WiFiPayload
@@ -134,5 +134,3 @@ class WiFiPayload extends MobileConfigPayload {
       : null;
   }
 }
-
-module.exports = WiFiPayload;

@@ -1,8 +1,8 @@
 'use strict';
 
-const MobileConfigPayload = require('./payload');
+import MobileConfigPayload from './payload.mjs';
 
-const { toSafeString, toSafeData, hasRequiredValues, deleteEmptyKeys } = require('../safe');
+import { toSafeString, toSafeData, hasRequiredValues, deleteEmptyKeys } from '../safe.mjs';
 
 const requiredValues = ['PayloadContent'];
 
@@ -13,7 +13,7 @@ const requiredValues = ['PayloadContent'];
  * @author Steven Collins <CarbonCollins>
  * @date 27th April 2018
  */
-class CertificatePayload extends MobileConfigPayload {
+export default class CertificatePayload extends MobileConfigPayload {
   /**
    * @constructor
    * @description creates an instance of AirPlayPayload
@@ -44,5 +44,3 @@ class CertificatePayload extends MobileConfigPayload {
       : null;
   }
 }
-
-module.exports = CertificatePayload;

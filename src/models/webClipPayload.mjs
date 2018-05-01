@@ -1,8 +1,8 @@
 'use strict';
 
-const MobileConfigPayload = require('./payload');
+import MobileConfigPayload from './payload.mjs';
 
-const { toSafeString, toSafeBoolean, toSafeData, hasRequiredValues, deleteEmptyKeys } = require('../safe');
+import { toSafeString, toSafeBoolean, toSafeData, hasRequiredValues, deleteEmptyKeys } from '../safe.mjs';
 
 const requiredValues = ['URL', 'Label'];
 
@@ -13,7 +13,7 @@ const requiredValues = ['URL', 'Label'];
  * @author Steven Collins <CarbonCollins>
  * @date 29th April 2018
  */
-class WebClipPayload extends MobileConfigPayload {
+export default class WebClipPayload extends MobileConfigPayload {
   /**
    * @constructor
    * @description creates an instance of WebClipPayload
@@ -45,5 +45,3 @@ class WebClipPayload extends MobileConfigPayload {
       : null;
   }
 }
-
-module.exports = WebClipPayload;
