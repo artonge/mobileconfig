@@ -1,6 +1,17 @@
 # mobileconfig
 
-Create and sign iOS *mobileconfig* configuration files.
+[![NSP Status](https://nodesecurity.io/orgs/carboncollins/projects/731057ed-eef2-4bec-a0b8-64298d3a971b/badge)](https://nodesecurity.io/orgs/carboncollins/projects/731057ed-eef2-4bec-a0b8-64298d3a971b)
+[![Maintainability](https://api.codeclimate.com/v1/badges/18ce7eb1903785701002/maintainability)](https://codeclimate.com/github/CarbonCollins/mobileconfig/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/18ce7eb1903785701002/test_coverage)](https://codeclimate.com/github/CarbonCollins/mobileconfig/test_coverage)
+[![Build Status](https://travis-ci.org/CarbonCollins/mobileconfig.svg?branch=master)](https://travis-ci.org/CarbonCollins/mobileconfig)
+
+Create and sign iOS and mac *mobileconfig* configuration files.
+
+This module has been bassed off of the previous work done by [andris9](https://github.com/andris9)/[mobileconfig](https://github.com/andris9/mobileconfig) and converted to be an ES6 module and use classes for creating profiles with multiple configuration payloads.
+
+This readme and docs may be out of date / incorrect from this line onwards as i have not gotten to it yet :D
+
+
 
 Currently the module is able to auto configure and sign the following configuration payloads:
 
