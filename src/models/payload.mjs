@@ -8,7 +8,8 @@ const requiredValues = ['PayloadType', 'PayloadVersion', 'PayloadIdentifier', 'P
 
 /**
  * @class
- * @description A class for containing all of the common structure data used in a mobileconfig payload
+ * @description A class for containing all of the common structure data used in a mobileconfig
+ * payload
  * @author Steven Collins <CarbonCollins>
  * @date 27th April 2018
  */
@@ -27,7 +28,13 @@ export default class MobileConfigPayload {
     this.description = options.description || null;
     this.organisation = options.organisation || null;
   }
-  
+
+  /**
+   * @description generates a plist safe js object to be converted to plist xml
+   * @readonly
+   * @memberof MobileConfigPayload
+   * @private
+   */
   get plistSafeObject() {
     const plistObj = {
       PayloadType: toSafeString(this.type),
@@ -38,9 +45,8 @@ export default class MobileConfigPayload {
       PayloadDescription: toSafeString(this.description),
       PayloadOrganisation: toSafeString(this.organisation)
     };
-    
-   deleteEmptyKeys(plistObj);
-    
+
+    deleteEmptyKeys(plistObj);
     return (hasRequiredValues(requiredValues, plistObj, `${this.type} payload`))
       ? plistObj
       : null;

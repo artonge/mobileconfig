@@ -12,7 +12,8 @@
       "program": "${workspaceFolder}\\tests\\classifyDevTest.mjs",
       "runtimeArgs": [
         "--experimental-modules"
-      ]
+      ],
+      "console": "integratedTerminal"
     }
   ]
 }

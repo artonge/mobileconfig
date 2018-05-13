@@ -9,23 +9,39 @@ Create and sign iOS and mac *mobileconfig* configuration files.
 
 This module has been bassed off of the previous work done by [andris9](https://github.com/andris9)/[mobileconfig](https://github.com/andris9/mobileconfig) and converted to be an ES6 module and use classes for creating profiles with multiple configuration payloads.
 
-This readme and docs may be out of date / incorrect from this line onwards as i have not gotten to it yet :D
+Currently this module supports adding the following payloads to a profile:
 
+* AirPlayPayload
+* CalDAVPayload,
+* CalendarSubscriptionPayload
+* CardDAVPayload
+* CertificatePayload
+* CertificatePreferencePaload
+* WebClipPayload
+* WiFiPayload
 
+and for any other payload or a custom payload you can use the RawPayload.
 
-Currently the module is able to auto configure and sign the following configuration payloads:
-
-  * `com.apple.mail.managed ` eg. e-mail accounts (IMAP only at this point)
-
-Payload signing is handled by [jsrsasign](http://kjur.github.io/jsrsasign/) which is a JavaScript only crypto library. This means that you can generate your *mobileconfig* files even in Windows.
+Profile signing is handled by [jsrsasign](http://kjur.github.io/jsrsasign/) allowing the profile to be signed on any platform that supports [Node.JS](https://nodejs.org/).
 
 ## Usage
 
-Require the module
+This package can be both required and imported into your application by using the following:
 
-```javascript
-var mobileconfig = require('mobileconfig');
+### require
 ```
+const mobileconfig = require('mobileconfig');
+```
+### import (ES6)
+```
+import mobileconfig from 'mobileconfig';
+```
+
+* * *
+
+__This readme and docs may be out of date / incorrect from this line onwards as I have not gotten to it yet :D__
+
+* * *
 
 ### Generate and sign Email configuration
 

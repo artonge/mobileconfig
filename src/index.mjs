@@ -1,15 +1,21 @@
 'use strict';
 
 import plist from 'plist';
+import jsrsasign from 'jsrsasign';
 
 import MobileConfigProfile from './models/profile.mjs';
 import MobileConfigPayload from './models/payload.mjs';
 
 import AirPlayPayload from './models/airPlayPayload.mjs';
+import CalDAVPayload from './models/calDAVPayload.mjs';
+import CalendarSubscriptionPayload from './models/calendarSubscriptionPayload.mjs';
+import cardDAVPayload from './models/cardDAVPayload.mjs';
 import CertificatePayload from './models/certificatePayload.mjs';
 import CertificatePreferencePayload from './models/certificatePreferencePayload.mjs';
 import WebClipPayload from './models/webClipPayload.mjs';
 import WiFiPayload from './models/wifiPayload.mjs';
+
+import RawPayload from './models/rawPayload.mjs';
 
 /**
  * @description Main entrypoint for creating mobile configuration profiles
@@ -20,13 +26,70 @@ export function generatePropertyList(profile) {
   return plist.build(profile);
 }
 
+/**
+ * @description Generates and signs an input profile
+ * @author Steven Collins <steven.collins@capgemini.com>
+ * @returns {String} a plist xml string to be exported
+ * @class MobileConfig
+ */
+export function generateSignedPropertyList(profile, options) {
+  return new Promise((resolve) => {
+    const {
+      certificate = '',
+      ca = '',
+      key = '',
+      hashAlgorithm = 'sha256',
+      signAlgorithm = 'SHA256withRSA',
+      signingTime = null
+    } = options;
+
+    const certs = certificate.toString()
+      .concat(ca.toString())
+      .trim()
+      .split('END CERTIFICATE-----')
+      .map((cert) => {
+        return `${cert}END CERTIFICATE-----`.trim();
+      })
+      .reverse()
+      .splice(1);
+
+    const signingOptions = {
+      content: {
+        str: plist.build(profile.plistSafeObject).toString('utf-8')
+      },
+      certs,
+      signerInfos: [
+        {
+          hashAlg: hashAlgorithm,
+          sAttr: (signingTime)
+            ? {
+              SigningTime: {},
+              SigningCertificateV2: { array: certs }
+            }
+            : {}
+        }
+      ],
+      signerCert: certs.slice(-1),
+      sigAlg: signAlgorithm,
+      signerPrvKey: key.toString()
+    };
+
+    resolve(Buffer.from(jsrsasign.asn1.cms.CMSUtil.newSignedData(signingOptions).getContentInfoEncodedHex(), 'hex'));
+  });
+}
+
 export {
   MobileConfigProfile,
   MobileConfigPayload,
 
   AirPlayPayload,
+  CalDAVPayload,
+  CalendarSubscriptionPayload,
+  cardDAVPayload,
   CertificatePayload,
   CertificatePreferencePayload,
   WebClipPayload,
-  WiFiPayload
+  WiFiPayload,
+
+  RawPayload
 };

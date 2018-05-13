@@ -7,10 +7,6 @@ import * as mobileconfig from '../src/index.mjs';
 
 const _dirname = path.dirname(new URL(import.meta.url).pathname.replace(/^\/([a-zA-Z]:)/g, '$1')) || __dirname;
 
-console.log('hi');
-console.log(_dirname);
-console.log(mobileconfig);
-
 const profile = new mobileconfig.MobileConfigProfile({
   displayName: 'Test Profile',
   description: 'A test profile to see if it works',
@@ -61,9 +57,14 @@ profile.addPayload(new mobileconfig.CertificatePayload('pem', {
 
 console.log(profile);
 
-const plist = mobileconfig.generatePropertyList(profile.plistSafeObject);
-
-console.log(plist);
-fs.writeFileSync('./test.mobileconfig', plist, 'utf-8');
-
-console.log('hellow world');
+mobileconfig.generateSignedPropertyList(profile, {
+  certificate: fs.readFileSync(path.join(_dirname, './fixtures/cert.pem'), 'utf-8'),
+  key: fs.readFileSync(path.join(_dirname, './fixtures/key.pem'), 'utf-8'),
+  hashAlgorithm: 'sha1',
+  signAlgorithm: 'SHA1withRSA'
+})
+  .then((result) => {
+    console.log(result);
+    fs.writeFileSync('./test.mobileconfig', result, 'utf-8');
+  })
+  .catch(console.error);
