@@ -1,10 +1,12 @@
 {
-  "name": "mobileconfig",
-  "version": "3.0.0",
+  "name": "@carboncollins/mobileconfig",
+  "version": "3.0.1",
   "description": "Create and sign iOS mobileconfig configuration files",
   "main": "./index",
   "scripts": {
-    "prepublish": "gulp generate-lib",
+    "prepublishOnly": "gulp generate-lib",
+    "publish-npm:beta": "npm publish --scope=@carboncollins --access=public --tag=next",
+    "publish-npm": "npm publish --scope=@carboncollins --access=public",
     "pretest": "gulp generate-lib",
     "test": "istanbul cover ./tests/mobileconfig-unit.js"
   },
