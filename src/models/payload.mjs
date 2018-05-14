@@ -36,10 +36,48 @@ export default class MobileConfigPayload {
      * wont necessarily change in the same release.
      */
     this.version = options.version || 1;
+
+    /**
+     * @member {String} [identifier=com.example.myprofile.mypayload]
+     * @memberof module:@carboncollins/mobileconfig.MobileConfigPayload
+     * @description A reverse-DNS-style identifier for the specific payload. It is usually the
+     * same identifier as the root-level PayloadIdentifier value with an additional component
+     * appended.
+     */
     this.identifier = options.identifier || 'com.example.myprofile.mypayload';
+
+    /**
+     * @member {String} [uuid=new UUIDv4()]
+     * @memberof module:@carboncollins/mobileconfig.MobileConfigPayload
+     * @description A globally unique identifier for the payload. The actual content is
+     * unimportant, but it must be globally unique. If left blank a random UUID will be generated.
+     * In macOS, you can use uuidgen to generate reasonable UUIDs.
+     */
     this.uuid = options.uuid || uuid.v4();
+
+    /**
+     * @member {String} [displayName='']
+     * @memberof module:@carboncollins/mobileconfig.MobileConfigPayload
+     * @description A human-readable name for the profile payload. This name is displayed on the
+     * Detail screen. It does not have to be unique.
+     */
     this.displayName = options.displayName || '';
+
+    /**
+     * @member {String} [description=null]
+     * @memberof module:@carboncollins/mobileconfig.MobileConfigPayload
+     * @description A human-readable description of this payload. This description is shown on the
+     * Detail screen.
+     */
     this.description = options.description || null;
+
+    /**
+     * @member {String} [organisation=null]
+     * @memberof module:@carboncollins/mobileconfig.MobileConfigPayload
+     * @description A human-readable string containing the name of the organization that provided
+     * the profile. The payload organization for a payload need not match the payload organization
+     * in the enclosing profile.
+     */
     this.organisation = options.organisation || null;
   }
 
@@ -47,6 +85,7 @@ export default class MobileConfigPayload {
    * @description generates a plist safe js object to be converted to plist xml
    * @readonly
    * @memberof module:@carboncollins/mobileconfig.MobileConfigPayload
+   * @returns {Object} a plist object encoded into a js object
    */
   get plistSafeObject() {
     const plistObj = {

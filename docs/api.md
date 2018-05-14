@@ -28,6 +28,13 @@ Create and sign iOS mobileconfig configuration files
             * [~clearPayloads()](#module_@carboncollins/mobileconfig.MobileConfigProfile..clearPayloads)
     * [.MobileConfigPayload](#module_@carboncollins/mobileconfig.MobileConfigPayload)
         * [new MobileConfigPayload()](#new_module_@carboncollins/mobileconfig.MobileConfigPayload_new)
+        * [.type](#module_@carboncollins/mobileconfig.MobileConfigPayload.type) : <code>String</code>
+        * [.version](#module_@carboncollins/mobileconfig.MobileConfigPayload.version) : <code>Number</code>
+        * [.identifier](#module_@carboncollins/mobileconfig.MobileConfigPayload.identifier) : <code>String</code>
+        * [.uuid](#module_@carboncollins/mobileconfig.MobileConfigPayload.uuid) : <code>String</code>
+        * [.displayName](#module_@carboncollins/mobileconfig.MobileConfigPayload.displayName) : <code>String</code>
+        * [.description](#module_@carboncollins/mobileconfig.MobileConfigPayload.description) : <code>String</code>
+        * [.organisation](#module_@carboncollins/mobileconfig.MobileConfigPayload.organisation) : <code>String</code>
         * [.plistSafeObject](#module_@carboncollins/mobileconfig.MobileConfigPayload.plistSafeObject)
     * [.generatePropertyList(profile)](#module_@carboncollins/mobileconfig.generatePropertyList) ⇒ <code>String</code>
     * [.generateSignedPropertyList(profile, [options])](#module_@carboncollins/mobileconfig.generateSignedPropertyList) ⇒ <code>String</code>
@@ -226,6 +233,13 @@ Removes any previously added payloads from the profile
 
 * [.MobileConfigPayload](#module_@carboncollins/mobileconfig.MobileConfigPayload)
     * [new MobileConfigPayload()](#new_module_@carboncollins/mobileconfig.MobileConfigPayload_new)
+    * [.type](#module_@carboncollins/mobileconfig.MobileConfigPayload.type) : <code>String</code>
+    * [.version](#module_@carboncollins/mobileconfig.MobileConfigPayload.version) : <code>Number</code>
+    * [.identifier](#module_@carboncollins/mobileconfig.MobileConfigPayload.identifier) : <code>String</code>
+    * [.uuid](#module_@carboncollins/mobileconfig.MobileConfigPayload.uuid) : <code>String</code>
+    * [.displayName](#module_@carboncollins/mobileconfig.MobileConfigPayload.displayName) : <code>String</code>
+    * [.description](#module_@carboncollins/mobileconfig.MobileConfigPayload.description) : <code>String</code>
+    * [.organisation](#module_@carboncollins/mobileconfig.MobileConfigPayload.organisation) : <code>String</code>
     * [.plistSafeObject](#module_@carboncollins/mobileconfig.MobileConfigPayload.plistSafeObject)
 
 <a name="new_module_@carboncollins/mobileconfig.MobileConfigPayload_new"></a>
@@ -234,6 +248,66 @@ Removes any previously added payloads from the profile
 Structured model data to be extended for each payload which can be added to a
 profile
 
+<a name="module_@carboncollins/mobileconfig.MobileConfigPayload.type"></a>
+
+#### MobileConfigPayload.type : <code>String</code>
+The payload type. The payloads are described in the payload specific classes.
+
+**Kind**: static property of [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)  
+**Default**: <code>&#x27;&#x27;</code>  
+<a name="module_@carboncollins/mobileconfig.MobileConfigPayload.version"></a>
+
+#### MobileConfigPayload.version : <code>Number</code>
+The version number of the individual payload. A profile can consist of payload
+with different version numbers. For example changes to the vpn software in iOS might
+introduce a new payload version to support additional features, but mail payload versions
+wont necessarily change in the same release.
+
+**Kind**: static property of [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)  
+**Default**: <code>1</code>  
+<a name="module_@carboncollins/mobileconfig.MobileConfigPayload.identifier"></a>
+
+#### MobileConfigPayload.identifier : <code>String</code>
+A reverse-DNS-style identifier for the specific payload. It is usually the
+same identifier as the root-level PayloadIdentifier value with an additional component
+appended.
+
+**Kind**: static property of [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)  
+**Default**: <code>com.example.myprofile.mypayload</code>  
+<a name="module_@carboncollins/mobileconfig.MobileConfigPayload.uuid"></a>
+
+#### MobileConfigPayload.uuid : <code>String</code>
+A globally unique identifier for the payload. The actual content is
+unimportant, but it must be globally unique. If left blank a random UUID will be generated.
+In macOS, you can use uuidgen to generate reasonable UUIDs.
+
+**Kind**: static property of [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)  
+**Default**: <code>new UUIDv4()</code>  
+<a name="module_@carboncollins/mobileconfig.MobileConfigPayload.displayName"></a>
+
+#### MobileConfigPayload.displayName : <code>String</code>
+A human-readable name for the profile payload. This name is displayed on the
+Detail screen. It does not have to be unique.
+
+**Kind**: static property of [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)  
+**Default**: <code>&#x27;&#x27;</code>  
+<a name="module_@carboncollins/mobileconfig.MobileConfigPayload.description"></a>
+
+#### MobileConfigPayload.description : <code>String</code>
+A human-readable description of this payload. This description is shown on the
+Detail screen.
+
+**Kind**: static property of [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)  
+**Default**: <code></code>  
+<a name="module_@carboncollins/mobileconfig.MobileConfigPayload.organisation"></a>
+
+#### MobileConfigPayload.organisation : <code>String</code>
+A human-readable string containing the name of the organization that provided
+the profile. The payload organization for a payload need not match the payload organization
+in the enclosing profile.
+
+**Kind**: static property of [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)  
+**Default**: <code></code>  
 <a name="module_@carboncollins/mobileconfig.MobileConfigPayload.plistSafeObject"></a>
 
 #### MobileConfigPayload.plistSafeObject

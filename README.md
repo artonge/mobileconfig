@@ -56,6 +56,11 @@ profile.addPayload(new mobileconfig.AirPlayPayload({
 
 console.log(mobileconfig.generatePropertyList(profile))
 ```
+
+## API docs
+
+for documentation on this module please checkout the [API Docs](./docs/api.md)
+
 ## Dev notes:
 
 There is a known issue with signing profiles which is currently being looked into
