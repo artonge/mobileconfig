@@ -18,19 +18,32 @@ import WiFiPayload from './models/wifiPayload.mjs';
 import RawPayload from './models/rawPayload.mjs';
 
 /**
- * @description Main entrypoint for creating mobile configuration profiles
- * @author Steven Collins <steven.collins@capgemini.com>
- * @class MobileConfig
+ * @module @carboncollins/mobileconfig
+ * @description Create and sign iOS mobileconfig configuration files
+ */
+
+/**
+ * @description generates a mobileconfig file from an input profile
+ * @param {module:@carboncollins/mobileconfig.MobileConfigProfile} profile an input profile to be
+ * generated into a propertylist file and then saved as a .mobileconfig file
+ * @author CarbonCollins <toastyghost@carboncollins.uk>
+ * @method module:@carboncollins/mobileconfig.generatePropertyList
+ * @returns {String} a plist xml string to be exported
+ * @static
  */
 export function generatePropertyList(profile) {
   return plist.build(profile);
 }
 
 /**
- * @description Generates and signs an input profile
- * @author Steven Collins <steven.collins@capgemini.com>
- * @returns {String} a plist xml string to be exported
- * @class MobileConfig
+ * @description generates a signed mobileconfig file from an input profile
+ * @param {module:@carboncollins/mobileconfig.MobileConfigProfile} profile an input profile to be
+ * generated into a propertylist file and then saved as a .mobileconfig file
+ * @param {Object} [options={}] options used for signing
+ * @author CarbonCollins <toastyghost@carboncollins.uk>
+ * @method module:@carboncollins/mobileconfig.generateSignedPropertyList
+ * @returns {String} a signed plist xml string to be exported
+ * @static
  */
 export function generateSignedPropertyList(profile, options) {
   return new Promise((resolve) => {

@@ -1,9 +1,9 @@
 # mobileconfig
 
 [![NSP Status](https://nodesecurity.io/orgs/carboncollins/projects/731057ed-eef2-4bec-a0b8-64298d3a971b/badge)](https://nodesecurity.io/orgs/carboncollins/projects/731057ed-eef2-4bec-a0b8-64298d3a971b)
-[![Maintainability](https://api.codeclimate.com/v1/badges/18ce7eb1903785701002/maintainability)](https://codeclimate.com/github/CarbonCollins/mobileconfig/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/18ce7eb1903785701002/test_coverage)](https://codeclimate.com/github/CarbonCollins/mobileconfig/test_coverage)
-[![Build Status](https://travis-ci.org/CarbonCollins/mobileconfig.svg?branch=master)](https://travis-ci.org/CarbonCollins/mobileconfig)
+[![Maintainability](https://api.codeclimate.com/v1/badges/18ce7eb1903785701002/maintainability)](https://codeclimate.com/github/@carboncollins/mobileconfig/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/18ce7eb1903785701002/test_coverage)](https://codeclimate.com/github/@carboncollins/mobileconfig/test_coverage)
+[![Build Status](https://travis-ci.org/@carboncollins/mobileconfig.svg?branch=master)](https://travis-ci.org/@carboncollins/mobileconfig)
 
 Create and sign iOS and mac *mobileconfig* configuration files.
 
@@ -54,8 +54,12 @@ profile.addPayload(new mobileconfig.AirPlayPayload({
   displayName: 'airplay device'
 }));
 
-console.log(mobileconfig.generateSignedPropertyList(profile))
+console.log(mobileconfig.generatePropertyList(profile))
 ```
+## Dev notes:
+
+There is a known issue with signing profiles which is currently being looked into
+
 ## License
 
 **MIT**

@@ -7,11 +7,11 @@ import { toSafeString, toSafeInteger, hasRequiredValues, deleteEmptyKeys } from 
 const requiredValues = ['PayloadType', 'PayloadVersion', 'PayloadIdentifier', 'PayloadUUID', 'PayloadDisplayName'];
 
 /**
- * @class
- * @description A class for containing all of the common structure data used in a mobileconfig
- * payload
- * @author Steven Collins <CarbonCollins>
- * @date 27th April 2018
+ * @class MobileConfigPayload
+ * @description Structured model data to be extended for each payload which can be added to a
+ * profile
+ * @author CarbonCollins <toastyghost@carboncollins.uk>
+ * @memberof module:@carboncollins/mobileconfig
  */
 export default class MobileConfigPayload {
   /**
@@ -20,7 +20,21 @@ export default class MobileConfigPayload {
    * @param {Object|MobileConfigPayload} [options={}] An object of options and structure data
    */
   constructor(options = {}) {
+    /**
+     * @member {String} [type='']
+     * @memberof module:@carboncollins/mobileconfig.MobileConfigPayload
+     * @description The payload type. The payloads are described in the payload specific classes.
+     */
     this.type = options.type || '';
+
+    /**
+     * @member {Number} [version=1]
+     * @memberof module:@carboncollins/mobileconfig.MobileConfigPayload
+     * @description The version number of the individual payload. A profile can consist of payload
+     * with different version numbers. For example changes to the vpn software in iOS might
+     * introduce a new payload version to support additional features, but mail payload versions
+     * wont necessarily change in the same release.
+     */
     this.version = options.version || 1;
     this.identifier = options.identifier || 'com.example.myprofile.mypayload';
     this.uuid = options.uuid || uuid.v4();
@@ -32,8 +46,7 @@ export default class MobileConfigPayload {
   /**
    * @description generates a plist safe js object to be converted to plist xml
    * @readonly
-   * @memberof MobileConfigPayload
-   * @private
+   * @memberof module:@carboncollins/mobileconfig.MobileConfigPayload
    */
   get plistSafeObject() {
     const plistObj = {
@@ -47,6 +60,7 @@ export default class MobileConfigPayload {
     };
 
     deleteEmptyKeys(plistObj);
+
     return (hasRequiredValues(requiredValues, plistObj, `${this.type} payload`))
       ? plistObj
       : null;

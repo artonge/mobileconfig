@@ -38,9 +38,10 @@ gulp.task('generateES5', ['clean-lib-es5', 'transpile']);
 gulp.task('generateES6', ['clean-lib-es6', 'copy-source']);
 gulp.task('generate-lib', ['generateES5', 'generateES6']);
 
+// files: ['./src/*.mjs', './src/models/*.mjs'],
 gulp.task('docs', () => {
   return jsdoc2md.render({
-    files: ['./src/*.mjs', './src/models/*.mjs'],
+    files: ['./src/index.mjs', './src/models/profile.mjs', './src/models/payload.mjs'],
     configure: './.jsdoc.json'
   })
     .then((output) => {

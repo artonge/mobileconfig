@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CarbonCollins/mobileconfig.git"
+    "url": "git+https://github.com/@carboncollins/mobileconfig.git"
   },
   "keywords": [
     "mobileconfig",
@@ -35,9 +35,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CarbonCollins/mobileconfig/issues"
+    "url": "https://github.com/@carboncollins/mobileconfig/issues"
   },
-  "homepage": "https://github.com/CarbonCollins/mobileconfig",
+  "homepage": "https://github.com/@carboncollins/mobileconfig",
   "dependencies": {
     "jsrsasign": "^8.0.3",
     "plist": "^3.0.1",

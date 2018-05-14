@@ -9,6 +9,13 @@
       "label": "generate-lib",
       "group": "build",
       "problemMatcher": []
+    },
+    {
+      "type": "gulp",
+      "task": "docs",
+      "problemMatcher": [
+        "$gulp-tsc"
+      ]
     }
   ]
 }
