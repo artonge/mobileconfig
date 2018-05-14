@@ -9,6 +9,7 @@ import { toSafeString } from '../safe.mjs';
  * @author Steven Collins <steven@carboncollins.uk>
  * @param {Object[]} value an array of whitelist objects
  * @returns {Object[]} an array of plist safe whitelist objects
+ * @private
  */
 function toSafeWhitelist(value) {
   if (value === undefined || value === null || !Array.isArray(value)) {
@@ -34,6 +35,7 @@ function toSafeWhitelist(value) {
  * @author Steven Collins <steven@carboncollins.uk>
  * @param {Object[]} value an arrray of airplay password objects
  * @returns {Object[]} an array of airplay password objects
+ * @private
  */
 function toSafePasswords(value) {
   if (value === undefined || value === null || !Array.isArray(value)) {
@@ -57,32 +59,47 @@ function toSafePasswords(value) {
 }
 
 /**
- * @class
- * @description A class for containing all of the common structure data used in an AirPlay payload
- * @extends MobileConfigPayload
- * @author Steven Collins <CarbonCollins>
- * @date 27th April 2018
+ * @class AirPlayPayload
+ * @description Structured model data for the AirPlay payload
+ * @author CarbonCollins <toastyghost@carboncollins.uk>
+ * @memberof module:@carboncollins/mobileconfig
+ * @extends module:@carboncollins/mobileconfig.AirPlayPayload
  */
 export default class AirPlayPayload extends MobileConfigPayload {
   /**
    * @constructor
    * @description creates an instance of AirPlayPayload
-   * @param {Object|AirPlayPayload} [options={}] An object of options
-   * @author Steven Collins <CarbonCollins>
-   * @date 27th April 2018
+   * @param {Object|module:@carboncollins/mobileconfig.AirPlayPayload} [options={}] An object of
+   * options
    */
   constructor(options = {}) {
     super(Object.assign({}, options, { type: 'com.apple.airplay' }));
 
+    /**
+     * @member {String[]} [whitelist=[]]
+     * @memberof module:@carboncollins/mobileconfig.AirPlayPayload
+     * @description Supervised only (ignored otherwise). If present, only AirPlay destinations
+     * present in this list are available to the device. The dictionary format is described below.
+     */
     this.whitelist = options.whitelist || []; // array of strings, each being an airplay id
+
+    /**
+     * @member {String[]} [passwords=[]]
+     * @memberof module:@carboncollins/mobileconfig.AirPlayPayload
+     * @description If present, sets passwords for known AirPlay destinations. The dictionary
+     * format is described below.
+     */
     this.passwords = options.passwords || []; // array of objects in the following format:
     // { deviceName: '', deviceId: '', password: '' }
   }
 
   /**
-   * @description generates a plist safe js object to be converted into plist xml
+   * @description generates a plist safe js object with all the required information for generating
+   * a mobileconfig profile
    * @readonly
-   * @memberof AirPlayPayload
+   * @memberof module:@carboncollins/mobileconfig.AirPlayPayload
+   * @author CarbonCollins <toastyghost@carboncollins.uk>
+   * @returns {Object} a plist object encoded into a js object
    */
   get plistSafeObject() {
     const plistObj = {

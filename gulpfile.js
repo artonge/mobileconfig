@@ -41,7 +41,7 @@ gulp.task('generate-lib', ['generateES5', 'generateES6']);
 // files: ['./src/*.mjs', './src/models/*.mjs'],
 gulp.task('docs', () => {
   return jsdoc2md.render({
-    files: ['./src/index.mjs', './src/models/profile.mjs', './src/models/payload.mjs'],
+    files: ['./src/index.mjs', './src/models/profile.mjs', './src/models/payload.mjs', './src/models/airPlayPayload.mjs'],
     configure: './.jsdoc.json'
   })
     .then((output) => {

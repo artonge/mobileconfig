@@ -35,7 +35,12 @@ Create and sign iOS mobileconfig configuration files
         * [.displayName](#module_@carboncollins/mobileconfig.MobileConfigPayload.displayName) : <code>String</code>
         * [.description](#module_@carboncollins/mobileconfig.MobileConfigPayload.description) : <code>String</code>
         * [.organisation](#module_@carboncollins/mobileconfig.MobileConfigPayload.organisation) : <code>String</code>
-        * [.plistSafeObject](#module_@carboncollins/mobileconfig.MobileConfigPayload.plistSafeObject)
+        * [.plistSafeObject](#module_@carboncollins/mobileconfig.MobileConfigPayload.plistSafeObject) ⇒ <code>Object</code>
+    * [.AirPlayPayload](#module_@carboncollins/mobileconfig.AirPlayPayload) ⇐ [<code>AirPlayPayload</code>](#module_@carboncollins/mobileconfig.AirPlayPayload)
+        * [new AirPlayPayload()](#new_module_@carboncollins/mobileconfig.AirPlayPayload_new)
+        * [.whitelist](#module_@carboncollins/mobileconfig.AirPlayPayload.whitelist) : <code>Array.&lt;String&gt;</code>
+        * [.passwords](#module_@carboncollins/mobileconfig.AirPlayPayload.passwords) : <code>Array.&lt;String&gt;</code>
+        * [.plistSafeObject](#module_@carboncollins/mobileconfig.AirPlayPayload.plistSafeObject) ⇒ <code>Object</code>
     * [.generatePropertyList(profile)](#module_@carboncollins/mobileconfig.generatePropertyList) ⇒ <code>String</code>
     * [.generateSignedPropertyList(profile, [options])](#module_@carboncollins/mobileconfig.generateSignedPropertyList) ⇒ <code>String</code>
 
@@ -240,7 +245,7 @@ Removes any previously added payloads from the profile
     * [.displayName](#module_@carboncollins/mobileconfig.MobileConfigPayload.displayName) : <code>String</code>
     * [.description](#module_@carboncollins/mobileconfig.MobileConfigPayload.description) : <code>String</code>
     * [.organisation](#module_@carboncollins/mobileconfig.MobileConfigPayload.organisation) : <code>String</code>
-    * [.plistSafeObject](#module_@carboncollins/mobileconfig.MobileConfigPayload.plistSafeObject)
+    * [.plistSafeObject](#module_@carboncollins/mobileconfig.MobileConfigPayload.plistSafeObject) ⇒ <code>Object</code>
 
 <a name="new_module_@carboncollins/mobileconfig.MobileConfigPayload_new"></a>
 
@@ -310,11 +315,56 @@ in the enclosing profile.
 **Default**: <code></code>  
 <a name="module_@carboncollins/mobileconfig.MobileConfigPayload.plistSafeObject"></a>
 
-#### MobileConfigPayload.plistSafeObject
+#### MobileConfigPayload.plistSafeObject ⇒ <code>Object</code>
 generates a plist safe js object to be converted to plist xml
 
 **Kind**: static property of [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)  
+**Returns**: <code>Object</code> - a plist object encoded into a js object  
 **Read only**: true  
+<a name="module_@carboncollins/mobileconfig.AirPlayPayload"></a>
+
+### @carboncollins/mobileconfig.AirPlayPayload ⇐ [<code>AirPlayPayload</code>](#module_@carboncollins/mobileconfig.AirPlayPayload)
+**Kind**: static class of [<code>@carboncollins/mobileconfig</code>](#module_@carboncollins/mobileconfig)  
+**Extends**: [<code>AirPlayPayload</code>](#module_@carboncollins/mobileconfig.AirPlayPayload)  
+**Author**: CarbonCollins <toastyghost@carboncollins.uk>  
+
+* [.AirPlayPayload](#module_@carboncollins/mobileconfig.AirPlayPayload) ⇐ [<code>AirPlayPayload</code>](#module_@carboncollins/mobileconfig.AirPlayPayload)
+    * [new AirPlayPayload()](#new_module_@carboncollins/mobileconfig.AirPlayPayload_new)
+    * [.whitelist](#module_@carboncollins/mobileconfig.AirPlayPayload.whitelist) : <code>Array.&lt;String&gt;</code>
+    * [.passwords](#module_@carboncollins/mobileconfig.AirPlayPayload.passwords) : <code>Array.&lt;String&gt;</code>
+    * [.plistSafeObject](#module_@carboncollins/mobileconfig.AirPlayPayload.plistSafeObject) ⇒ <code>Object</code>
+
+<a name="new_module_@carboncollins/mobileconfig.AirPlayPayload_new"></a>
+
+#### new AirPlayPayload()
+Structured model data for the AirPlay payload
+
+<a name="module_@carboncollins/mobileconfig.AirPlayPayload.whitelist"></a>
+
+#### AirPlayPayload.whitelist : <code>Array.&lt;String&gt;</code>
+Supervised only (ignored otherwise). If present, only AirPlay destinations
+present in this list are available to the device. The dictionary format is described below.
+
+**Kind**: static property of [<code>AirPlayPayload</code>](#module_@carboncollins/mobileconfig.AirPlayPayload)  
+**Default**: <code>[]</code>  
+<a name="module_@carboncollins/mobileconfig.AirPlayPayload.passwords"></a>
+
+#### AirPlayPayload.passwords : <code>Array.&lt;String&gt;</code>
+If present, sets passwords for known AirPlay destinations. The dictionary
+format is described below.
+
+**Kind**: static property of [<code>AirPlayPayload</code>](#module_@carboncollins/mobileconfig.AirPlayPayload)  
+**Default**: <code>[]</code>  
+<a name="module_@carboncollins/mobileconfig.AirPlayPayload.plistSafeObject"></a>
+
+#### AirPlayPayload.plistSafeObject ⇒ <code>Object</code>
+generates a plist safe js object with all the required information for generating
+a mobileconfig profile
+
+**Kind**: static property of [<code>AirPlayPayload</code>](#module_@carboncollins/mobileconfig.AirPlayPayload)  
+**Returns**: <code>Object</code> - a plist object encoded into a js object  
+**Read only**: true  
+**Author**: CarbonCollins <toastyghost@carboncollins.uk>  
 <a name="module_@carboncollins/mobileconfig.generatePropertyList"></a>
 
 ### @carboncollins/mobileconfig.generatePropertyList(profile) ⇒ <code>String</code>
