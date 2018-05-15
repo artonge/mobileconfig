@@ -63,7 +63,7 @@ function toSafePasswords(value) {
  * @description Structured model data for the AirPlay payload
  * @author CarbonCollins <toastyghost@carboncollins.uk>
  * @memberof module:@carboncollins/mobileconfig
- * @extends module:@carboncollins/mobileconfig.AirPlayPayload
+ * @extends module:@carboncollins/mobileconfig.MobileConfigPayload
  */
 export default class AirPlayPayload extends MobileConfigPayload {
   /**

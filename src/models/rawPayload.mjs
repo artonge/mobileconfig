@@ -3,31 +3,39 @@
 import MobileConfigPayload from './payload.mjs';
 
 /**
- * @class
- * @description A class for adding a custom payload or one that has not been added to the model
- * lists yet
- * @extends MobileConfigPayload
- * @author Steven Collins <CarbonCollins>
- * @date 13th May 2018
+ * @class RawPayload
+ * @description Structured model data for a raw payload
+ * @author CarbonCollins <toastyghost@carboncollins.uk>
+ * @memberof module:@carboncollins/mobileconfig
+ * @extends module:@carboncollins/mobileconfig.MobileConfigPayload
  */
 export default class RawPayload extends MobileConfigPayload {
   /**
    * @constructor
    * @description creates an instance of RawPayload
-   * @param {Object|RawPayload} [options={}] An object of options
-   * @author Steven Collins <CarbonCollins>
-   * @date 13th May 2018
+   * @param {Object|module:@carboncollins/mobileconfig.RawPayload} [options={}] An object of
+   * options
    */
   constructor(options = {}) {
     super(options);
 
-    this.raw = options.raw;
+    /**
+     * @member {Object} [raw={}]
+     * @memberof module:@carboncollins/mobileconfig.RawPayload
+     * @description AN object of raw profile keys defined in the configuration profile reference
+     * document. the base payload properties still apply but can be overriden with the raw fields
+     * @see {@link https://developer.apple.com/library/content/featuredarticles/iPhoneConfigurationProfileRef/Introduction/Introduction.html}
+     */
+    this.raw = options.raw || {};
   }
 
   /**
-   * @description generates a plist safe js object to be converted into plist xml
+   * @description generates a plist safe js object with all the required information for generating
+   * a mobileconfig profile
    * @readonly
-   * @memberof AirPlayPayload
+   * @memberof module:@carboncollins/mobileconfig.RawPayload
+   * @author CarbonCollins <toastyghost@carboncollins.uk>
+   * @returns {Object} a plist object encoded into a js object
    */
   get plistSafeObject() {
     return Object.assign({}, super.plistSafeObject, this.raw);
