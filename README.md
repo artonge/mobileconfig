@@ -1,5 +1,10 @@
 # mobileconfig
 
+
+[![npm](https://img.shields.io/npm/v/@carboncollins/mobileconfig.svg)](https://www.npmjs.com/package/@carboncollins/mobileconfig)
+[![npm](https://img.shields.io/npm/dt/@carboncollins/mobileconfig.svg)](https://www.npmjs.com/package/@carboncollins/mobileconfig)
+[![node](https://img.shields.io/node/v/@carboncollins/mobileconfig.svg)](https://www.npmjs.com/package/@carboncollins/mobileconfig)
+[![license](https://img.shields.io/github/license/CarbonCollins/mobileconfig.svg)](https://github.com/CarbonCollins/mobileconfig/blob/master/LICENSE)
 [![NSP Status](https://nodesecurity.io/orgs/carboncollins/projects/731057ed-eef2-4bec-a0b8-64298d3a971b/badge)](https://nodesecurity.io/orgs/carboncollins/projects/731057ed-eef2-4bec-a0b8-64298d3a971b)
 [![Maintainability](https://api.codeclimate.com/v1/badges/18ce7eb1903785701002/maintainability)](https://codeclimate.com/github/@carboncollins/mobileconfig/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/18ce7eb1903785701002/test_coverage)](https://codeclimate.com/github/@carboncollins/mobileconfig/test_coverage)
