@@ -2,3 +2,17 @@ node_modules
 .DS_STORE
 npm-debug.log
 *.mobileconfig
+src
+.vscode
+test
+tests
+gulpfile.js
+coverage
+.jsdoc.json
+.gitignore
+.travis.yml
+.bablerc
+.codeclimate.yml
+.eslint.json
+.jsdoc.json
+index.old.js
