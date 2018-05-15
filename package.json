@@ -1,6 +1,6 @@
 {
   "name": "@carboncollins/mobileconfig",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Create and sign iOS mobileconfig configuration files",
   "main": "./index",
   "scripts": {
