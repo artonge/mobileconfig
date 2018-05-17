@@ -6,10 +6,12 @@ import jsrsasign from 'jsrsasign';
 import MobileConfigProfile from './models/profile.mjs';
 import MobileConfigPayload from './models/payload.mjs';
 
+import ActiveDirectoryCertificate from './models/activeDirectoryCertificatePayload.mjs';
 import AirPlayPayload from './models/airPlayPayload.mjs';
+import AirPlaySecurityPayload from './models/airPlaySecurityPayload.mjs';
 import CalDAVPayload from './models/calDAVPayload.mjs';
 import CalendarSubscriptionPayload from './models/calendarSubscriptionPayload.mjs';
-import cardDAVPayload from './models/cardDAVPayload.mjs';
+import CardDAVPayload from './models/cardDAVPayload.mjs';
 import CertificatePayload from './models/certificatePayload.mjs';
 import CertificatePreferencePayload from './models/certificatePreferencePayload.mjs';
 import WebClipPayload from './models/webClipPayload.mjs';
@@ -95,10 +97,12 @@ export {
   MobileConfigProfile,
   MobileConfigPayload,
 
+  ActiveDirectoryCertificate,
   AirPlayPayload,
+  AirPlaySecurityPayload,
   CalDAVPayload,
   CalendarSubscriptionPayload,
-  cardDAVPayload,
+  CardDAVPayload,
   CertificatePayload,
   CertificatePreferencePayload,
   WebClipPayload,

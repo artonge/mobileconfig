@@ -26,11 +26,31 @@ Create and sign iOS mobileconfig configuration files
 
 
 * [@carboncollins/mobileconfig](#module_@carboncollins/mobileconfig)
+    * [.ActiveDirectoryCertificate](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate) ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)
+        * [new ActiveDirectoryCertificate()](#new_module_@carboncollins/mobileconfig.ActiveDirectoryCertificate_new)
+        * [.allowAllAppsAccess](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.allowAllAppsAccess) : <code>Boolean</code>
+        * [.server](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.server) : <code>String</code>
+        * [.template](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.template) : <code>String</code>
+        * [.acquisitionMechanism](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.acquisitionMechanism) : <code>String</code>
+        * [.authority](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.authority) : <code>String</code>
+        * [.renewalTimeInterval](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.renewalTimeInterval) : <code>Number</code>
+        * [.description](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.description) : <code>String</code>
+        * [.keyIsExtractable](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.keyIsExtractable) : <code>Boolean</code>
+        * [.promptForCredentials](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.promptForCredentials) : <code>Boolean</code>
+        * [.keysize](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.keysize) : <code>Number</code>
+        * [.enableAutoRenewal](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.enableAutoRenewal) : <code>Boolean</code>
+        * [.plistSafeObject](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.plistSafeObject) ⇒ <code>Object</code>
     * [.AirPlayPayload](#module_@carboncollins/mobileconfig.AirPlayPayload) ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)
         * [new AirPlayPayload()](#new_module_@carboncollins/mobileconfig.AirPlayPayload_new)
         * [.whitelist](#module_@carboncollins/mobileconfig.AirPlayPayload.whitelist) : <code>Array.&lt;String&gt;</code>
         * [.passwords](#module_@carboncollins/mobileconfig.AirPlayPayload.passwords) : <code>Array.&lt;String&gt;</code>
         * [.plistSafeObject](#module_@carboncollins/mobileconfig.AirPlayPayload.plistSafeObject) ⇒ <code>Object</code>
+    * [.AirPlaySecurityPayload](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload) ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)
+        * [new AirPlaySecurityPayload()](#new_module_@carboncollins/mobileconfig.AirPlaySecurityPayload_new)
+        * [.securityType](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload.securityType) : <code>String</code>
+        * [.accessType](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload.accessType) : <code>String</code>
+        * [.password](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload.password) : <code>String</code>
+        * [.plistSafeObject](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload.plistSafeObject) ⇒ <code>Object</code>
     * [.CalDAVPayload](#module_@carboncollins/mobileconfig.CalDAVPayload) ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)
         * [new CalDAVPayload()](#new_module_@carboncollins/mobileconfig.CalDAVPayload_new)
         * [.accountDescription](#module_@carboncollins/mobileconfig.CalDAVPayload.accountDescription) : <code>String</code>
@@ -141,6 +161,120 @@ Create and sign iOS mobileconfig configuration files
     * [.generatePropertyList(profile)](#module_@carboncollins/mobileconfig.generatePropertyList) ⇒ <code>String</code>
     * [.generateSignedPropertyList(profile, [options])](#module_@carboncollins/mobileconfig.generateSignedPropertyList) ⇒ <code>String</code>
 
+<a name="module_@carboncollins/mobileconfig.ActiveDirectoryCertificate"></a>
+
+### @carboncollins/mobileconfig.ActiveDirectoryCertificate ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)
+**Kind**: static class of [<code>@carboncollins/mobileconfig</code>](#module_@carboncollins/mobileconfig)  
+**Extends**: [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)  
+**Author**: CarbonCollins <toastyghost@carboncollins.uk>  
+
+* [.ActiveDirectoryCertificate](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate) ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)
+    * [new ActiveDirectoryCertificate()](#new_module_@carboncollins/mobileconfig.ActiveDirectoryCertificate_new)
+    * [.allowAllAppsAccess](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.allowAllAppsAccess) : <code>Boolean</code>
+    * [.server](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.server) : <code>String</code>
+    * [.template](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.template) : <code>String</code>
+    * [.acquisitionMechanism](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.acquisitionMechanism) : <code>String</code>
+    * [.authority](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.authority) : <code>String</code>
+    * [.renewalTimeInterval](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.renewalTimeInterval) : <code>Number</code>
+    * [.description](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.description) : <code>String</code>
+    * [.keyIsExtractable](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.keyIsExtractable) : <code>Boolean</code>
+    * [.promptForCredentials](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.promptForCredentials) : <code>Boolean</code>
+    * [.keysize](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.keysize) : <code>Number</code>
+    * [.enableAutoRenewal](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.enableAutoRenewal) : <code>Boolean</code>
+    * [.plistSafeObject](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.plistSafeObject) ⇒ <code>Object</code>
+
+<a name="new_module_@carboncollins/mobileconfig.ActiveDirectoryCertificate_new"></a>
+
+#### new ActiveDirectoryCertificate()
+Structured model data for the Active Directory Certificate payload
+
+<a name="module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.allowAllAppsAccess"></a>
+
+#### ActiveDirectoryCertificate.allowAllAppsAccess : <code>Boolean</code>
+If true, apps have access to the private key.
+
+**Kind**: static property of [<code>ActiveDirectoryCertificate</code>](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate)  
+<a name="module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.server"></a>
+
+#### ActiveDirectoryCertificate.server : <code>String</code>
+Fully qualified host name of the Active Directory issuing CA.
+
+**Kind**: static property of [<code>ActiveDirectoryCertificate</code>](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate)  
+<a name="module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.template"></a>
+
+#### ActiveDirectoryCertificate.template : <code>String</code>
+Template Name as it appears in the General tab of the template’s object in the
+Certificate Templates’ Microsoft Management Console snap-in component.
+
+**Kind**: static property of [<code>ActiveDirectoryCertificate</code>](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate)  
+<a name="module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.acquisitionMechanism"></a>
+
+#### ActiveDirectoryCertificate.acquisitionMechanism : <code>String</code>
+Most commonly `RPC`. If using ‘Web enrollment,’ `HTTP`.
+
+**Kind**: static property of [<code>ActiveDirectoryCertificate</code>](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate)  
+<a name="module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.authority"></a>
+
+#### ActiveDirectoryCertificate.authority : <code>String</code>
+Name of the CA. This value is determined from the Common Name (CN) of the
+Active Directory entry: CN=<your CA name>, CN='Certification Authorities', CN='Public Key
+Services', CN='Services', or CN='Configuration', <your base Domain Name>.
+
+**Kind**: static property of [<code>ActiveDirectoryCertificate</code>](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate)  
+<a name="module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.renewalTimeInterval"></a>
+
+#### ActiveDirectoryCertificate.renewalTimeInterval : <code>Number</code>
+Number of days in advance of certificate expiration that the notification
+center will notify the user.
+
+**Kind**: static property of [<code>ActiveDirectoryCertificate</code>](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate)  
+<a name="module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.description"></a>
+
+#### ActiveDirectoryCertificate.description : <code>String</code>
+User-friendly description of the certification identity.
+
+**Kind**: static property of [<code>ActiveDirectoryCertificate</code>](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate)  
+<a name="module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.keyIsExtractable"></a>
+
+#### ActiveDirectoryCertificate.keyIsExtractable : <code>Boolean</code>
+If true, the private key can be exported.
+
+**Kind**: static property of [<code>ActiveDirectoryCertificate</code>](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate)  
+<a name="module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.promptForCredentials"></a>
+
+#### ActiveDirectoryCertificate.promptForCredentials : <code>Boolean</code>
+This key applies only to user certificates where Manual Download is the chosen
+method of profile delivery. If true, the user will be prompted for credentials when the
+profile is installed. Omit this key for computer certificates.
+
+**Kind**: static property of [<code>ActiveDirectoryCertificate</code>](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate)  
+<a name="module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.keysize"></a>
+
+#### ActiveDirectoryCertificate.keysize : <code>Number</code>
+Optional; defaults to 2048. The RSA key size for the Certificate Signing
+Request (CSR). Availability: Available in macOS 10.11 and later.
+
+**Kind**: static property of [<code>ActiveDirectoryCertificate</code>](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate)  
+**Default**: <code>2048</code>  
+<a name="module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.enableAutoRenewal"></a>
+
+#### ActiveDirectoryCertificate.enableAutoRenewal : <code>Boolean</code>
+Optional. If set to true, the certificate obtained with this payload will
+attempt auto-renewal. Only applies to device Active Directory certificate payloads.
+Availability: Available in macOS 10.13.4 and later.
+
+**Kind**: static property of [<code>ActiveDirectoryCertificate</code>](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate)  
+**Default**: <code>false</code>  
+<a name="module_@carboncollins/mobileconfig.ActiveDirectoryCertificate.plistSafeObject"></a>
+
+#### ActiveDirectoryCertificate.plistSafeObject ⇒ <code>Object</code>
+generates a plist safe js object with all the required information for generating
+a mobileconfig profile
+
+**Kind**: static property of [<code>ActiveDirectoryCertificate</code>](#module_@carboncollins/mobileconfig.ActiveDirectoryCertificate)  
+**Returns**: <code>Object</code> - a plist object encoded into a js object  
+**Read only**: true  
+**Author**: CarbonCollins <toastyghost@carboncollins.uk>  
 <a name="module_@carboncollins/mobileconfig.AirPlayPayload"></a>
 
 ### @carboncollins/mobileconfig.AirPlayPayload ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)
@@ -182,6 +316,72 @@ generates a plist safe js object with all the required information for generatin
 a mobileconfig profile
 
 **Kind**: static property of [<code>AirPlayPayload</code>](#module_@carboncollins/mobileconfig.AirPlayPayload)  
+**Returns**: <code>Object</code> - a plist object encoded into a js object  
+**Read only**: true  
+**Author**: CarbonCollins <toastyghost@carboncollins.uk>  
+<a name="module_@carboncollins/mobileconfig.AirPlaySecurityPayload"></a>
+
+### @carboncollins/mobileconfig.AirPlaySecurityPayload ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)
+**Kind**: static class of [<code>@carboncollins/mobileconfig</code>](#module_@carboncollins/mobileconfig)  
+**Extends**: [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)  
+**Author**: CarbonCollins <toastyghost@carboncollins.uk>  
+
+* [.AirPlaySecurityPayload](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload) ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)
+    * [new AirPlaySecurityPayload()](#new_module_@carboncollins/mobileconfig.AirPlaySecurityPayload_new)
+    * [.securityType](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload.securityType) : <code>String</code>
+    * [.accessType](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload.accessType) : <code>String</code>
+    * [.password](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload.password) : <code>String</code>
+    * [.plistSafeObject](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload.plistSafeObject) ⇒ <code>Object</code>
+
+<a name="new_module_@carboncollins/mobileconfig.AirPlaySecurityPayload_new"></a>
+
+#### new AirPlaySecurityPayload()
+Structured model data for the AirPlay Security payload
+
+<a name="module_@carboncollins/mobileconfig.AirPlaySecurityPayload.securityType"></a>
+
+#### AirPlaySecurityPayload.securityType : <code>String</code>
+Required. Must be one of the defined values: `PASSCODE_ONCE`,
+`PASSCODE_ALWAYS`, or `PASSWORD`.
+
+`PASSCODE_ONCE` will require an on-screen passcode to be entered on the first connection
+from a device. Subsequent connections from the same device will not be prompted.
+
+`PASSCODE_ALWAYS` will require an on-screen passcode to be entered upon every AirPlay
+connection.
+
+`PASSWORD` will require a passphrase to be entered as specified in the Password key. The
+Password key is required if this SecurityType is selected.
+
+`NONE` was deprecated in tvOS 11.3. Existing profiles using `NONE` will get the
+`PASSWORD_ONCE` behavior.
+
+**Kind**: static property of [<code>AirPlaySecurityPayload</code>](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload)  
+<a name="module_@carboncollins/mobileconfig.AirPlaySecurityPayload.accessType"></a>
+
+#### AirPlaySecurityPayload.accessType : <code>String</code>
+Required. Must be one of the defined values: `ANY` or `WIFI_ONLY`.
+
+`ANY` allows connections from both Ethernet/WiFi and AWDL.
+
+`WIFI_ONLY` allows connections only from devices on the same Ethernet/WiFi network as the
+Apple TV.
+
+**Kind**: static property of [<code>AirPlaySecurityPayload</code>](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload)  
+<a name="module_@carboncollins/mobileconfig.AirPlaySecurityPayload.password"></a>
+
+#### AirPlaySecurityPayload.password : <code>String</code>
+Optional. The AirPlay password. Required if `securityType` is `PASSWORD`.
+
+**Kind**: static property of [<code>AirPlaySecurityPayload</code>](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload)  
+**Default**: <code></code>  
+<a name="module_@carboncollins/mobileconfig.AirPlaySecurityPayload.plistSafeObject"></a>
+
+#### AirPlaySecurityPayload.plistSafeObject ⇒ <code>Object</code>
+generates a plist safe js object with all the required information for generating
+a mobileconfig profile
+
+**Kind**: static property of [<code>AirPlaySecurityPayload</code>](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload)  
 **Returns**: <code>Object</code> - a plist object encoded into a js object  
 **Read only**: true  
 **Author**: CarbonCollins <toastyghost@carboncollins.uk>  
