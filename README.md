@@ -1,7 +1,8 @@
 # mobileconfig
 
 
-[![npm](https://img.shields.io/npm/v/@carboncollins/mobileconfig.svg)](https://www.npmjs.com/package/@carboncollins/mobileconfig)
+
+[![npm (scoped)](https://img.shields.io/npm/v/@carboncollins/mobileconfig.svg)](https://www.npmjs.com/package/@carboncollins/mobileconfig)
 [![npm](https://img.shields.io/npm/dt/@carboncollins/mobileconfig.svg)](https://www.npmjs.com/package/@carboncollins/mobileconfig)
 [![node](https://img.shields.io/node/v/@carboncollins/mobileconfig.svg)](https://www.npmjs.com/package/@carboncollins/mobileconfig)
 [![license](https://img.shields.io/github/license/CarbonCollins/mobileconfig.svg)](https://github.com/CarbonCollins/mobileconfig/blob/master/LICENSE)
