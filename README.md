@@ -16,12 +16,14 @@ This module has been bassed off of the previous work done by [andris9](https://g
 
 Currently this module supports adding the following payloads to a profile:
 
+* ActiveDirectoryCertificatePayload
 * AirPlayPayload
+* AirPlaySecurityPayload
 * CalDAVPayload,
 * CalendarSubscriptionPayload
 * CardDAVPayload
 * CertificatePayload
-* CertificatePreferencePaload
+* CertificatePreferencePayload
 * WebClipPayload
 * WiFiPayload
 
