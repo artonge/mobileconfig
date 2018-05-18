@@ -20,7 +20,10 @@ Currently this module supports adding the following payloads to a profile:
 * ActiveDirectoryCertificatePayload
 * AirPlayPayload
 * AirPlaySecurityPayload
-* CalDAVPayload,
+* AirPrintPayload
+* APNPayload
+* AppLockPayload
+* CalDAVPayload
 * CalendarSubscriptionPayload
 * CardDAVPayload
 * CertificatePayload

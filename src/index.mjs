@@ -9,6 +9,9 @@ import MobileConfigPayload from './models/payload.mjs';
 import ActiveDirectoryCertificate from './models/activeDirectoryCertificatePayload.mjs';
 import AirPlayPayload from './models/airPlayPayload.mjs';
 import AirPlaySecurityPayload from './models/airPlaySecurityPayload.mjs';
+import AirPrintPayload from './models/airPrintPayload.mjs';
+import APNPayload from './models/apnPayload.mjs';
+import AppLockPayload from './models/appLockPayload.mjs';
 import CalDAVPayload from './models/calDAVPayload.mjs';
 import CalendarSubscriptionPayload from './models/calendarSubscriptionPayload.mjs';
 import CardDAVPayload from './models/cardDAVPayload.mjs';
@@ -100,6 +103,9 @@ export {
   ActiveDirectoryCertificate,
   AirPlayPayload,
   AirPlaySecurityPayload,
+  AirPrintPayload,
+  APNPayload,
+  AppLockPayload,
   CalDAVPayload,
   CalendarSubscriptionPayload,
   CardDAVPayload,

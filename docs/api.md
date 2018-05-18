@@ -9,6 +9,21 @@
 ## Typedefs
 
 <dl>
+<dt><a href="#airPrintServers">airPrintServers</a> : <code>Object</code></dt>
+<dd><p>Each item in the AirPrint array must contain the following keys and values</p>
+</dd>
+<dt><a href="#apnDescriptior">apnDescriptior</a> : <code>Object</code></dt>
+<dd><p>an object containing the various apn infomration</p>
+</dd>
+<dt><a href="#AppDescriptor">AppDescriptor</a> : <code>Object</code></dt>
+<dd><p>an object containing the various app information and options</p>
+</dd>
+<dt><a href="#AppOptionsDescriptor">AppOptionsDescriptor</a> : <code>Object</code></dt>
+<dd><p>an object containing the various app options</p>
+</dd>
+<dt><a href="#UserEnabledOptionsDescriptor">UserEnabledOptionsDescriptor</a> : <code>Object</code></dt>
+<dd><p>an object containing the various user enabled options</p>
+</dd>
 <dt><a href="#qosMarkingPolocy">qosMarkingPolocy</a> : <code>Object</code></dt>
 <dd><p>should contain a list of apps that are aloud to use L3 and L3 marking</p>
 </dd>
@@ -51,6 +66,20 @@ Create and sign iOS mobileconfig configuration files
         * [.accessType](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload.accessType) : <code>String</code>
         * [.password](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload.password) : <code>String</code>
         * [.plistSafeObject](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload.plistSafeObject) ⇒ <code>Object</code>
+    * [.AirPrintPayload](#module_@carboncollins/mobileconfig.AirPrintPayload) ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)
+        * [new AirPrintPayload()](#new_module_@carboncollins/mobileconfig.AirPrintPayload_new)
+        * [.printers](#module_@carboncollins/mobileconfig.AirPrintPayload.printers) : [<code>Array.&lt;airPrintServers&gt;</code>](#airPrintServers)
+        * [.plistSafeObject](#module_@carboncollins/mobileconfig.AirPrintPayload.plistSafeObject) ⇒ <code>Object</code>
+    * ~~[.APNPayload](#module_@carboncollins/mobileconfig.APNPayload) ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)~~
+        * [new APNPayload()](#new_module_@carboncollins/mobileconfig.APNPayload_new)
+        * [.defaultsData](#module_@carboncollins/mobileconfig.APNPayload.defaultsData) : <code>Object</code>
+        * [.defaultsDomainName](#module_@carboncollins/mobileconfig.APNPayload.defaultsDomainName) : <code>String</code>
+        * [.apns](#module_@carboncollins/mobileconfig.APNPayload.apns) : [<code>Array.&lt;apnDescriptior&gt;</code>](#apnDescriptior)
+        * [.plistSafeObject](#module_@carboncollins/mobileconfig.APNPayload.plistSafeObject) ⇒ <code>Object</code>
+    * ~~[.AppLockPayload](#module_@carboncollins/mobileconfig.AppLockPayload) ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)~~
+        * [new AppLockPayload()](#new_module_@carboncollins/mobileconfig.AppLockPayload_new)
+        * [.app](#module_@carboncollins/mobileconfig.AppLockPayload.app) : [<code>AppDescriptor</code>](#AppDescriptor)
+        * [.plistSafeObject](#module_@carboncollins/mobileconfig.AppLockPayload.plistSafeObject) ⇒ <code>Object</code>
     * [.CalDAVPayload](#module_@carboncollins/mobileconfig.CalDAVPayload) ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)
         * [new CalDAVPayload()](#new_module_@carboncollins/mobileconfig.CalDAVPayload_new)
         * [.accountDescription](#module_@carboncollins/mobileconfig.CalDAVPayload.accountDescription) : <code>String</code>
@@ -382,6 +411,128 @@ generates a plist safe js object with all the required information for generatin
 a mobileconfig profile
 
 **Kind**: static property of [<code>AirPlaySecurityPayload</code>](#module_@carboncollins/mobileconfig.AirPlaySecurityPayload)  
+**Returns**: <code>Object</code> - a plist object encoded into a js object  
+**Read only**: true  
+**Author**: CarbonCollins <toastyghost@carboncollins.uk>  
+<a name="module_@carboncollins/mobileconfig.AirPrintPayload"></a>
+
+### @carboncollins/mobileconfig.AirPrintPayload ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)
+**Kind**: static class of [<code>@carboncollins/mobileconfig</code>](#module_@carboncollins/mobileconfig)  
+**Extends**: [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)  
+**Author**: CarbonCollins <toastyghost@carboncollins.uk>  
+
+* [.AirPrintPayload](#module_@carboncollins/mobileconfig.AirPrintPayload) ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)
+    * [new AirPrintPayload()](#new_module_@carboncollins/mobileconfig.AirPrintPayload_new)
+    * [.printers](#module_@carboncollins/mobileconfig.AirPrintPayload.printers) : [<code>Array.&lt;airPrintServers&gt;</code>](#airPrintServers)
+    * [.plistSafeObject](#module_@carboncollins/mobileconfig.AirPrintPayload.plistSafeObject) ⇒ <code>Object</code>
+
+<a name="new_module_@carboncollins/mobileconfig.AirPrintPayload_new"></a>
+
+#### new AirPrintPayload()
+Structured model data for the AirPlay payload
+
+<a name="module_@carboncollins/mobileconfig.AirPrintPayload.printers"></a>
+
+#### AirPrintPayload.printers : [<code>Array.&lt;airPrintServers&gt;</code>](#airPrintServers)
+An array of AirPrint printers that should always be shown.
+
+**Kind**: static property of [<code>AirPrintPayload</code>](#module_@carboncollins/mobileconfig.AirPrintPayload)  
+**Default**: <code>[]</code>  
+<a name="module_@carboncollins/mobileconfig.AirPrintPayload.plistSafeObject"></a>
+
+#### AirPrintPayload.plistSafeObject ⇒ <code>Object</code>
+generates a plist safe js object with all the required information for generating
+a mobileconfig profile
+
+**Kind**: static property of [<code>AirPrintPayload</code>](#module_@carboncollins/mobileconfig.AirPrintPayload)  
+**Returns**: <code>Object</code> - a plist object encoded into a js object  
+**Read only**: true  
+**Author**: CarbonCollins <toastyghost@carboncollins.uk>  
+<a name="module_@carboncollins/mobileconfig.APNPayload"></a>
+
+### ~~@carboncollins/mobileconfig.APNPayload ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)~~
+***Deprecated***
+
+**Kind**: static class of [<code>@carboncollins/mobileconfig</code>](#module_@carboncollins/mobileconfig)  
+**Extends**: [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)  
+**Author**: CarbonCollins <toastyghost@carboncollins.uk>  
+
+* ~~[.APNPayload](#module_@carboncollins/mobileconfig.APNPayload) ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)~~
+    * [new APNPayload()](#new_module_@carboncollins/mobileconfig.APNPayload_new)
+    * [.defaultsData](#module_@carboncollins/mobileconfig.APNPayload.defaultsData) : <code>Object</code>
+    * [.defaultsDomainName](#module_@carboncollins/mobileconfig.APNPayload.defaultsDomainName) : <code>String</code>
+    * [.apns](#module_@carboncollins/mobileconfig.APNPayload.apns) : [<code>Array.&lt;apnDescriptior&gt;</code>](#apnDescriptior)
+    * [.plistSafeObject](#module_@carboncollins/mobileconfig.APNPayload.plistSafeObject) ⇒ <code>Object</code>
+
+<a name="new_module_@carboncollins/mobileconfig.APNPayload_new"></a>
+
+#### new APNPayload()
+Structured model data for the AirPlay payload
+
+<a name="module_@carboncollins/mobileconfig.APNPayload.defaultsData"></a>
+
+#### APNPayload.defaultsData : <code>Object</code>
+This dictionary contains two key/value pairs.
+
+**Kind**: static property of [<code>APNPayload</code>](#module_@carboncollins/mobileconfig.APNPayload)  
+**Default**: <code>{}</code>  
+<a name="module_@carboncollins/mobileconfig.APNPayload.defaultsDomainName"></a>
+
+#### APNPayload.defaultsDomainName : <code>String</code>
+The only allowed value is com.apple.managedCarrier.
+
+**Kind**: static property of [<code>APNPayload</code>](#module_@carboncollins/mobileconfig.APNPayload)  
+**Default**: <code>com.apple.managedCarrier</code>  
+<a name="module_@carboncollins/mobileconfig.APNPayload.apns"></a>
+
+#### APNPayload.apns : [<code>Array.&lt;apnDescriptior&gt;</code>](#apnDescriptior)
+The only allowed value is com.apple.managedCarrier.
+
+**Kind**: static property of [<code>APNPayload</code>](#module_@carboncollins/mobileconfig.APNPayload)  
+**Default**: <code>[]</code>  
+<a name="module_@carboncollins/mobileconfig.APNPayload.plistSafeObject"></a>
+
+#### APNPayload.plistSafeObject ⇒ <code>Object</code>
+generates a plist safe js object with all the required information for generating
+a mobileconfig profile
+
+**Kind**: static property of [<code>APNPayload</code>](#module_@carboncollins/mobileconfig.APNPayload)  
+**Returns**: <code>Object</code> - a plist object encoded into a js object  
+**Read only**: true  
+**Author**: CarbonCollins <toastyghost@carboncollins.uk>  
+<a name="module_@carboncollins/mobileconfig.AppLockPayload"></a>
+
+### ~~@carboncollins/mobileconfig.AppLockPayload ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)~~
+***Deprecated***
+
+**Kind**: static class of [<code>@carboncollins/mobileconfig</code>](#module_@carboncollins/mobileconfig)  
+**Extends**: [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)  
+**Author**: CarbonCollins <toastyghost@carboncollins.uk>  
+
+* ~~[.AppLockPayload](#module_@carboncollins/mobileconfig.AppLockPayload) ⇐ [<code>MobileConfigPayload</code>](#module_@carboncollins/mobileconfig.MobileConfigPayload)~~
+    * [new AppLockPayload()](#new_module_@carboncollins/mobileconfig.AppLockPayload_new)
+    * [.app](#module_@carboncollins/mobileconfig.AppLockPayload.app) : [<code>AppDescriptor</code>](#AppDescriptor)
+    * [.plistSafeObject](#module_@carboncollins/mobileconfig.AppLockPayload.plistSafeObject) ⇒ <code>Object</code>
+
+<a name="new_module_@carboncollins/mobileconfig.AppLockPayload_new"></a>
+
+#### new AppLockPayload()
+Structured model data for the AirPlay payload
+
+<a name="module_@carboncollins/mobileconfig.AppLockPayload.app"></a>
+
+#### AppLockPayload.app : [<code>AppDescriptor</code>](#AppDescriptor)
+An object containing information about the app.
+
+**Kind**: static property of [<code>AppLockPayload</code>](#module_@carboncollins/mobileconfig.AppLockPayload)  
+**Default**: <code>{}</code>  
+<a name="module_@carboncollins/mobileconfig.AppLockPayload.plistSafeObject"></a>
+
+#### AppLockPayload.plistSafeObject ⇒ <code>Object</code>
+generates a plist safe js object with all the required information for generating
+a mobileconfig profile
+
+**Kind**: static property of [<code>AppLockPayload</code>](#module_@carboncollins/mobileconfig.AppLockPayload)  
 **Returns**: <code>Object</code> - a plist object encoded into a js object  
 **Read only**: true  
 **Author**: CarbonCollins <toastyghost@carboncollins.uk>  
@@ -1358,6 +1509,89 @@ generates a signed mobileconfig file from an input profile
 | --- | --- | --- | --- |
 | profile | [<code>MobileConfigProfile</code>](#module_@carboncollins/mobileconfig.MobileConfigProfile) |  | an input profile to be generated into a propertylist file and then saved as a .mobileconfig file |
 | [options] | <code>Object</code> | <code>{}</code> | options used for signing |
+
+<a name="airPrintServers"></a>
+
+## airPrintServers : <code>Object</code>
+Each item in the AirPrint array must contain the following keys and values
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| ipAddress | <code>String</code> |  | The IP Address of the AirPrint destination. |
+| resourcePath | <code>String</code> |  | The Resource Path associated with the printer. This corresponds to the rp parameter of the _ipps.tcp Bonjour record. For example: `printers/Canon_MG5300_series` `printers/Xerox_Phaser_7600` `ipp/print` `Epson_IPP_Printer` |
+| [port] | <code>Number</code> |  | Listening port of the AirPrint destination. If this key is not specified AirPrint will use the default port. Availability: Available only in iOS 11.0 and later. |
+| [forceTLS] | <code>Boolean</code> | <code>false</code> | If true AirPrint connections are secured by Transport Layer Security (TLS). Default is false. Availability: Available only in iOS 11.0 and later. |
+
+<a name="apnDescriptior"></a>
+
+## apnDescriptior : <code>Object</code>
+an object containing the various apn infomration
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| apn | <code>String</code> | This string specifies the Access Point Name. |
+| username | <code>String</code> | This string specifies the user name for this APN. If it is missing, the device prompts for it during profile installation. |
+| [password] | <code>Buffer</code> | Optional. This data represents the password for the user for this APN. For obfuscation purposes, the password is encoded. If it is missing from the payload, the device prompts for the password during profile installation. |
+| [proxy] | <code>String</code> | Optional. The IP address or URL of the APN proxy. |
+| [proxyPort] | <code>Number</code> | Optional. The port number of the APN proxy. |
+
+<a name="AppDescriptor"></a>
+
+## AppDescriptor : <code>Object</code>
+an object containing the various app information and options
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| identifier | <code>String</code> | The bundle identifier of the application. |
+| options | [<code>AppOptionsDescriptor</code>](#AppOptionsDescriptor) | Optional. Availability: Available only in iOS 7.0 and later. |
+| userEnabledOptions | [<code>UserEnabledOptionsDescriptor</code>](#UserEnabledOptionsDescriptor) | Optional. Availability: Available only in iOS 7.0 and later. |
+
+<a name="AppOptionsDescriptor"></a>
+
+## AppOptionsDescriptor : <code>Object</code>
+an object containing the various app options
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| [disableTouch] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, the touch screen is disabled. Default is `false`. Available in tvOS 10.2 and later. |
+| [disableDeviceRotation] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, device rotation sensing is disabled. Default is `false`. |
+| [disableVolumeButtons] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, the volume buttons are disabled. Default to `false`. |
+| [disableRingerSwitch] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, the ringer switch is disabled. Default is `false`. When disabled, the ringer behavior depends on what position the switch was in when it was first disabled. |
+| [disableSleepWakeButton] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, the sleep/wake button is disabled. Default is `false`. |
+| [disableAutoLock] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, the device will not automatically go to sleep after an idle period. Available in tvOS 10.2 and later. |
+| [enableVoiceOver] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, VoiceOver is turned on. Default is `false`. Available in tvOS 10.2 and later. |
+| [enableZoom] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, Zoom is turned on. Default is `false`. Available in tvOS 10.2 and later. |
+| [enableInvertColors] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, Invert Colors is turned on. Default is `false`. Available in tvOS 10.2 and later. |
+| [enableAssistiveTouch] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, AssistiveTouch is turned on. Default is `false`. |
+| [enableSpeakSelection] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, Speak Selection is turned on. Default is `false`. |
+| [enableMonoAudio] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, Mono Audio is turned on. Default is `false`. |
+
+<a name="UserEnabledOptionsDescriptor"></a>
+
+## UserEnabledOptionsDescriptor : <code>Object</code>
+an object containing the various user enabled options
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| [voiceOver] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, allow VoiceOver adjustment. Default is `false`. |
+| [zoom] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, allow Zoom adjustment. Default is `false`. |
+| [invertColors] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, allow Invert Colors adjustment. Default is `false`. |
+| [assistiveTouch] | <code>Boolean</code> | <code>false</code> | Optional. If `true`, allow AssistiveTouch adjustment. Default is `false`. |
 
 <a name="qosMarkingPolocy"></a>
 
