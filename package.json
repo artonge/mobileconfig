@@ -1,8 +1,10 @@
 {
   "name": "@carboncollins/mobileconfig",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "Create and sign iOS mobileconfig configuration files",
-  "main": "./index",
+  "main": "index.js",
+  "module": "index.mjs",
+  "jsnext:main": "index.mjs",
   "scripts": {
     "prepublishOnly": "gulp generate-lib",
     "publish-npm:beta": "npm publish --scope=@carboncollins --access=public --tag=next",
@@ -20,7 +22,9 @@
     "mac",
     "profile",
     "RFC5652",
-    "SignedData"
+    "SignedData",
+    "es5",
+    "es6"
   ],
   "author": "Steven Collins",
   "contributors": [
@@ -62,6 +66,23 @@
     "mocha": "^5.1.1"
   },
   "engines": {
-    "node": ">=4.0.0"
-  }
+    "node": ">=4.0.0",
+    "yarn": "^1.6.0"
+  },
+  "directories": {
+    "lib": "lib",
+    "doc": "docs"
+  },
+  "files": [
+    "lib/es5/**/*.js",
+    "lib/es6/**/*.mjs",
+    "index.js",
+    "index.mjs",
+    "package.json",
+    "docs/*.md",
+    "docs/**/*.md",
+    "LICENSE.md",
+    "README.md",
+    "CHANGELOG.md"
+  ]
 }

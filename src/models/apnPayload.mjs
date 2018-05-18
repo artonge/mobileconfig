@@ -34,11 +34,11 @@ function toSafeAPNList(value) {
 
 /**
  * @class APNPayload
- * @description Structured model data for the AirPlay payload
+ * @description Structured model data for the AirPlay payload. Deprecated in iOS 7 onwards.
  * @author CarbonCollins <toastyghost@carboncollins.uk>
  * @memberof module:@carboncollins/mobileconfig
  * @extends module:@carboncollins/mobileconfig.MobileConfigPayload
- * @deprecated in iOS 7 onwards
+ * @deprecated
  */
 export default class APNPayload extends MobileConfigPayload {
   /**

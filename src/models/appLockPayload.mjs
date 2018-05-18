@@ -83,7 +83,6 @@ function toSafeAppList(value = {}) {
  * @author CarbonCollins <toastyghost@carboncollins.uk>
  * @memberof module:@carboncollins/mobileconfig
  * @extends module:@carboncollins/mobileconfig.MobileConfigPayload
- * @deprecated in iOS 7 onwards
  */
 export default class AppLockPayload extends MobileConfigPayload {
   /**

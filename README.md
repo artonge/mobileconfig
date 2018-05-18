@@ -70,7 +70,7 @@ console.log(mobileconfig.generatePropertyList(profile))
 
 ## API docs
 
-for documentation on this module please checkout the [API Docs](./docs/api.md)
+for documentation on this module please checkout the [API Docs](https://github.com/CarbonCollins/mobileconfig/blob/master/docs/api.md)
 
 ## Dev notes:
 
