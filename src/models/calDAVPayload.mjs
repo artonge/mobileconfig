@@ -61,7 +61,7 @@ export default class CalDAVPayload extends MobileConfigPayload {
      * @memberof module:@carboncollins/mobileconfig.CalDAVPayload
      * @description The port on which to connect to the server.
      */
-    this.port = options.port || (this.useSSL) ? 8448 : 8008;
+    this.port = options.port || (this.useSSL ? 8448 : 8008);
 
     /**
      * @member {String} [principalURL=null]
