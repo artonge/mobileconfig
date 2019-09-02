@@ -61,7 +61,7 @@ export default class CardDAVPayload extends MobileConfigPayload {
      * @memberof module:@carboncollins/mobileconfig.CardDAVPayload
      * @description The port on which to connect to the server.
      */
-    this.port = options.port || (this.useSSL) ? 443 : 80;
+    this.port = options.port || (this.useSSL ? 443 : 80);
 
     /**
      * @member {String} [principalURL=null]
