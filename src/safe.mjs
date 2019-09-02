@@ -25,6 +25,11 @@ export function isValueEmpty(value) {
  */
 export function deleteEmptyKeys(value) {
   Object.keys(value).forEach((key) => {
+    // Remove empty values recursively 
+    if (typeof value[key] === typeof {}) {
+        value[key] = toSafeObject(value[key])
+    }
+    
     return (isValueEmpty(value[key]) && delete value[key]);
   });
 
