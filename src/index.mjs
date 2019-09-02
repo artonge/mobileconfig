@@ -37,7 +37,7 @@ import RawPayload from './models/rawPayload.mjs';
  * @static
  */
 export function generatePropertyList(profile) {
-  return plist.build(profile);
+  return plist.build(profile.plistSafeObject);
 }
 
 /**
@@ -73,7 +73,7 @@ export function generateSignedPropertyList(profile, options) {
 
     const signingOptions = {
       content: {
-        str: plist.build(profile.plistSafeObject).toString('utf-8')
+        str: generatePropertyList(profile.plistSafeObject).toString('utf-8')
       },
       certs,
       signerInfos: [
