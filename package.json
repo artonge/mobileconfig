@@ -1,5 +1,5 @@
 {
-  "name": "@carboncollins/mobileconfig",
+  "name": "@artonge/mobileconfig",
   "version": "3.2.1",
   "description": "Create and sign iOS mobileconfig configuration files",
   "main": "index.js",
@@ -7,14 +7,14 @@
   "jsnext:main": "index.mjs",
   "scripts": {
     "prepublishOnly": "gulp generate-lib",
-    "publish-npm:beta": "npm publish --scope=@carboncollins --access=public --tag=next",
-    "publish-npm": "npm publish --scope=@carboncollins --access=public",
+    "publish-npm:beta": "npm publish --scope=@artonge --access=public --tag=next",
+    "publish-npm": "npm publish --scope=@artonge --access=public",
     "pretest": "gulp generate-lib",
     "test": "istanbul cover ./tests/mobileconfig-unit.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/CarbonCollins/mobileconfig"
+    "url": "https://github.com/artonge/mobileconfig"
   },
   "keywords": [
     "mobileconfig",
@@ -34,14 +34,14 @@
     },
     {
       "name": "Steven Collins",
-      "url": "https://github.com/CarbonCollins"
+      "url": "https://github.com/artonge"
     }
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/@carboncollins/mobileconfig/issues"
+    "url": "https://github.com/@artonge/mobileconfig/issues"
   },
-  "homepage": "https://github.com/@carboncollins/mobileconfig",
+  "homepage": "https://github.com/@artonge/mobileconfig",
   "dependencies": {
     "jsrsasign": "^8.0.3",
     "plist": "^3.0.1",
