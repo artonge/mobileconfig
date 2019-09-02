@@ -1,6 +1,6 @@
 {
   "name": "@artonge/mobileconfig",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "Create and sign iOS mobileconfig configuration files",
   "main": "index.js",
   "module": "index.mjs",
@@ -34,6 +34,10 @@
     },
     {
       "name": "Steven Collins",
+      "url": "https://github.com/CarbonCollins"
+    },
+    {
+      "name": "Louis Chemineau",
       "url": "https://github.com/artonge"
     }
   ],
